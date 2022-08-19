@@ -26,6 +26,9 @@ const DUMMY_EXPENSES = [
 
 const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+
+  const [filterExpenses, setFilterExpenses] = useState("");
+
   const addExpenseHandler = (expense) => {
     console.log("In App.js");
     console.log(expense);
@@ -33,6 +36,23 @@ const App = () => {
       return [expense, ...prevExpenses];
     });
   };
+
+  // const filterYearHandler = (year) => {
+  //   console.log(year, "filtered");
+
+  //   const newExpenses = expenses.filter((expense) => {
+  //     return expense.date.getFullYear() === year;
+  //   });
+
+  //   setFilterExpenses()
+
+  //   // setExpenses(newExpenses);
+  //   // console.log(
+  //   //   expenses.filter((expense) => {
+  //   //     expense.year === year;
+  //   //   })
+  //   // );
+  // };
 
   return (
     <div>
